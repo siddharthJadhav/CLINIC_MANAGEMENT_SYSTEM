@@ -15,6 +15,8 @@
   </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
@@ -103,7 +105,7 @@
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Component id="cboday" min="-2" max="-2" attributes="1"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cbomonth" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbomonth" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -356,6 +358,9 @@
                 </Property>
                 <Property name="name" type="java.lang.String" value="cbomonth" noResource="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbomonthActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cboyear">
               <Properties>
@@ -363,21 +368,17 @@
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="10">
-                    <StringItem index="0" value="2012"/>
-                    <StringItem index="1" value="2013"/>
-                    <StringItem index="2" value="2014"/>
-                    <StringItem index="3" value="2015"/>
-                    <StringItem index="4" value="2016"/>
-                    <StringItem index="5" value="2017"/>
-                    <StringItem index="6" value="2017"/>
-                    <StringItem index="7" value="2018"/>
-                    <StringItem index="8" value="2019"/>
-                    <StringItem index="9" value="2020"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="2018"/>
+                    <StringItem index="1" value="2019"/>
+                    <StringItem index="2" value="2020"/>
                   </StringArray>
                 </Property>
                 <Property name="name" type="java.lang.String" value="cboyear" noResource="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboyearActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbltime">
               <Properties>

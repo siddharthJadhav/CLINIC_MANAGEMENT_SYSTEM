@@ -1,9 +1,3 @@
-/*
- * appointment.java
- *
- * Created on February 6, 2012, 4:49 PM
- */
-
 package clinic;
 import javax.swing.JScrollPane;
 import javax.swing.*;
@@ -77,11 +71,11 @@ public class appointment extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbldate.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldate.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldate.setText("Date");
         lbldate.setName("lbldate"); // NOI18N
 
-        txtlname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtlname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtlname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtlname.setName("txtlname"); // NOI18N
         txtlname.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -95,11 +89,11 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        lbllname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbllname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbllname.setText("Last Name");
         lbllname.setName("lbllname"); // NOI18N
 
-        txtmname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtmname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtmname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtmname.setName("txtmname"); // NOI18N
         txtmname.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -108,15 +102,15 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        lblmname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblmname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblmname.setText("Middle Name");
         lblmname.setName("lblmname"); // NOI18N
 
-        lblname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblname.setText("First Name");
         lblname.setName("lblfname"); // NOI18N
 
-        txtfname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtfname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtfname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtfname.setName("txtfname"); // NOI18N
         txtfname.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -125,7 +119,7 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        btnsubmit.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnsubmit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnsubmit.setText("submit");
         btnsubmit.setName("btnsubmit"); // NOI18N
         btnsubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +128,7 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnexit.setText("Close");
         btnexit.setName("btnexit"); // NOI18N
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -143,23 +137,33 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        cboday.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboday.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboday.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         cboday.setName("cboday"); // NOI18N
 
-        cbomonth.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cbomonth.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbomonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" }));
         cbomonth.setName("cbomonth"); // NOI18N
+        cbomonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbomonthActionPerformed(evt);
+            }
+        });
 
-        cboyear.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cboyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015", "2016", "2017", "2017", "2018", "2019", "2020" }));
+        cboyear.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cboyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2018", "2019", "2020" }));
         cboyear.setName("cboyear"); // NOI18N
+        cboyear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboyearActionPerformed(evt);
+            }
+        });
 
-        lbltime.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbltime.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbltime.setText("Time");
         lbltime.setName("lbltime"); // NOI18N
 
-        txttime.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txttime.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txttime.setName("txttime"); // NOI18N
         txttime.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -172,11 +176,11 @@ public class appointment extends javax.swing.JFrame {
             }
         });
 
-        cboam.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboam.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "am", "pm" }));
         cboam.setName("cboam"); // NOI18N
 
-        btndone.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btndone.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btndone.setText("Done");
         btndone.setName("btndone"); // NOI18N
         btndone.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +209,7 @@ public class appointment extends javax.swing.JFrame {
                                 .add(42, 42, 42)
                                 .add(cboday, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(cbomonth, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(cbomonth, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(lbltime)
@@ -266,7 +270,7 @@ public class appointment extends javax.swing.JFrame {
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
@@ -286,7 +290,7 @@ public class appointment extends javax.swing.JFrame {
         jTable1.setName("jTable1"); // NOI18N
         jScrollPane1.setViewportView(jTable1);
 
-        lblappointment.setFont(new java.awt.Font("Times New Roman", 0, 36));
+        lblappointment.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         lblappointment.setForeground(new java.awt.Color(0, 102, 51));
         lblappointment.setText("Appointment");
         lblappointment.setName("lblappointment"); // NOI18N
@@ -664,6 +668,14 @@ public class appointment extends javax.swing.JFrame {
       
 // TODO add your handling code here:
     }//GEN-LAST:event_btnsubmitActionPerformed
+
+    private void cboyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboyearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboyearActionPerformed
+
+    private void cbomonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbomonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbomonthActionPerformed
     
     /**
      * @param args the command line arguments
