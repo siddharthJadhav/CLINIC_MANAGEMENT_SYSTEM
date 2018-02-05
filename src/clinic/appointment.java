@@ -3,6 +3,9 @@ import javax.swing.JScrollPane;
 import javax.swing.*;
 import java.sql.*;
 import java.util.Vector;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+        
 /**
  *
  * @author  Administrator
@@ -579,11 +582,27 @@ public class appointment extends javax.swing.JFrame {
       fname=txtfname.getText().trim();
       mname=txtmname.getText().trim();
       lname=txtlname.getText().trim();
-
+      Date currentDate = new Date();
+      Date selectedDate = new Date();
+      int hour = Integer.parseInt(time);
+      if(am == "pm"){
+          hour += 12;
+          System.out.println("hour : "+hour);
+      }
+      
+        try {
+            selectedDate = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss").parse(date1+" "+ hour +":00:00");
+            System.out.println("appointment Date : "+ selectedDate);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
       if(fname.equals("")||lname.equals(""))
       { 
           JOptionPane.showMessageDialog(this,"Please Enter full name!!!!");
-      }  
+      }
+      else if(selectedDate.before(currentDate) && !selectedDate.equals(currentDate)){
+          JOptionPane.showMessageDialog(this,"Please Enter valid date!!!!");
+      }
       else
       {    
      
