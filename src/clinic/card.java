@@ -7,11 +7,24 @@
 package clinic;
 
 
+import java.io.InputStream;
 import javax.swing.*;
 import java.sql.*;
 
 import java.util.Date;
 import java.text.*;
+import java.util.*;
+
+import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import net.sf.jasperreports.engine.JRPrintPage;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.swing.JRViewer;
 
 /**
  *
@@ -102,6 +115,7 @@ public class card extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtreminder = new javax.swing.JTextField();
         lblreminder = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Card");
@@ -113,56 +127,56 @@ public class card extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbldate.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldate.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldate.setText("Date");
         lbldate.setName("lbldate"); // NOI18N
 
         txtcode.setEditable(false);
-        txtcode.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtcode.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtcode.setBorder(null);
         txtcode.setName("txtcode"); // NOI18N
 
-        lblname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblname.setText("Name");
         lblname.setName("lblname"); // NOI18N
 
         txtname.setEditable(false);
-        txtname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtname.setBorder(null);
         txtname.setName("txtname"); // NOI18N
 
-        Age.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        Age.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Age.setText("Age");
         Age.setName("lblage"); // NOI18N
 
         txtage.setEditable(false);
-        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtage.setBorder(null);
         txtage.setName("txtage"); // NOI18N
 
-        lblgender.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblgender.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblgender.setText("Gender");
 
         txtgender.setEditable(false);
-        txtgender.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtgender.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtgender.setBorder(null);
         txtgender.setName("txtgender"); // NOI18N
 
-        lblallergy.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblallergy.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblallergy.setText("Allergy  :-");
         lblallergy.setName("lblallergy"); // NOI18N
 
         txtallergy.setEditable(false);
-        txtallergy.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtallergy.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtallergy.setBorder(null);
         txtallergy.setName("txtallergy"); // NOI18N
 
-        lblcode.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblcode.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblcode.setText("Code");
         lblcode.setName("lblcode"); // NOI18N
 
         lbldatedisplay.setBackground(new java.awt.Color(233, 230, 212));
-        lbldatedisplay.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldatedisplay.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldatedisplay.setName("lbldatedisplay"); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
@@ -225,7 +239,7 @@ public class card extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txtdiesease.setColumns(1);
-        txtdiesease.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtdiesease.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtdiesease.setLineWrap(true);
         txtdiesease.setRows(1);
         txtdiesease.setTabSize(2);
@@ -237,7 +251,7 @@ public class card extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtdiesease);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButton1.setText("Disease");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,7 +265,7 @@ public class card extends javax.swing.JFrame {
         });
 
         txttreatement.setColumns(1);
-        txttreatement.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txttreatement.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txttreatement.setLineWrap(true);
         txttreatement.setRows(1);
         txttreatement.setTabSize(2);
@@ -263,7 +277,7 @@ public class card extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(txttreatement);
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButton2.setText("Treatment");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,16 +330,14 @@ public class card extends javax.swing.JFrame {
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .add(lbldiesease, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, lbldiesease, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(4, 4, 4)
-                        .add(lbltreatement, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
+                        .add(lbltreatement, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
@@ -335,7 +347,7 @@ public class card extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        lblcard.setFont(new java.awt.Font("Algerian", 1, 36));
+        lblcard.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         lblcard.setForeground(new java.awt.Color(0, 153, 51));
         lblcard.setText("Patient Card");
         lblcard.setName("lblcard"); // NOI18N
@@ -344,16 +356,16 @@ public class card extends javax.swing.JFrame {
 
         lblbill.setText("jLabel1");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel1.setText("Visit No. :");
 
         txtbalance.setEditable(false);
-        txtbalance.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtbalance.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Balance");
 
-        txtpaid.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtpaid.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtpaid.setEnabled(false);
         txtpaid.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -366,10 +378,10 @@ public class card extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Paid");
 
-        txtamount.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtamount.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtamount.setName("txtamount"); // NOI18N
         txtamount.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -385,11 +397,11 @@ public class card extends javax.swing.JFrame {
             }
         });
 
-        lblamount.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblamount.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblamount.setText("Amount");
         lblamount.setName("lblamount"); // NOI18N
 
-        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnexit.setText("Back");
         btnexit.setName("btnexit"); // NOI18N
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -398,7 +410,7 @@ public class card extends javax.swing.JFrame {
             }
         });
 
-        btnhistory.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnhistory.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnhistory.setText("History");
         btnhistory.setName("btnhistory"); // NOI18N
         btnhistory.addActionListener(new java.awt.event.ActionListener() {
@@ -407,7 +419,7 @@ public class card extends javax.swing.JFrame {
             }
         });
 
-        btnsave.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnsave.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnsave.setText("Save");
         btnsave.setName("btnsave"); // NOI18N
         btnsave.addActionListener(new java.awt.event.ActionListener() {
@@ -418,7 +430,7 @@ public class card extends javax.swing.JFrame {
 
         lbleamount.setForeground(new java.awt.Color(204, 0, 0));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setText("Reminder");
 
         txtreminder.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -427,63 +439,71 @@ public class card extends javax.swing.JFrame {
             }
         });
 
-        lblreminder.setFont(new java.awt.Font("Algerian", 0, 18));
+        lblreminder.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         lblreminder.setForeground(new java.awt.Color(255, 51, 102));
+
+        jButton3.setText("Print");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(313, 313, 313)
-                .add(lblcard)
-                .add(63, 63, 63)
-                .add(jLabel1)
-                .add(18, 18, 18)
-                .add(lblid, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(373, Short.MAX_VALUE))
             .add(jSeparator3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1166, Short.MAX_VALUE)
-            .add(layout.createSequentialGroup()
-                .add(46, 46, 46)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel4)
-                            .add(layout.createSequentialGroup()
-                                .add(txtreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(10, 10, 10)
-                                .add(lblreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                    .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(lblbill))
-                .add(104, 104, 104))
-            .add(layout.createSequentialGroup()
-                .add(55, 55, 55)
-                .add(lblamount)
-                .add(33, 33, 33)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(txtamount, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(41, 41, 41)
-                        .add(jLabel2)
-                        .add(13, 13, 13)
-                        .add(txtpaid, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(59, 59, 59)
-                        .add(jLabel3)
-                        .add(18, 18, 18)
-                        .add(txtbalance, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(lbleamount, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(524, Short.MAX_VALUE))
             .add(jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1166, Short.MAX_VALUE)
             .add(layout.createSequentialGroup()
-                .add(112, 112, 112)
-                .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(69, 69, 69)
-                .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(88, 88, 88)
-                .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(597, Short.MAX_VALUE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(313, 313, 313)
+                        .add(lblcard)
+                        .add(63, 63, 63)
+                        .add(jLabel1)
+                        .add(18, 18, 18)
+                        .add(lblid, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(layout.createSequentialGroup()
+                        .add(46, 46, 46)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(layout.createSequentialGroup()
+                                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel4)
+                                    .add(layout.createSequentialGroup()
+                                        .add(txtreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(10, 10, 10)
+                                        .add(lblreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                            .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblbill)))
+                    .add(layout.createSequentialGroup()
+                        .add(55, 55, 55)
+                        .add(lblamount)
+                        .add(33, 33, 33)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(layout.createSequentialGroup()
+                                .add(txtamount, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(41, 41, 41)
+                                .add(jLabel2)
+                                .add(13, 13, 13)
+                                .add(txtpaid, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(59, 59, 59)
+                                .add(jLabel3)
+                                .add(18, 18, 18)
+                                .add(txtbalance, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(lbleamount, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(layout.createSequentialGroup()
+                        .add(78, 78, 78)
+                        .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(75, 75, 75)
+                        .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(76, 76, 76)
+                        .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(79, 79, 79)
+                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -497,13 +517,12 @@ public class card extends javax.swing.JFrame {
                 .add(lblbill)
                 .add(7, 7, 7)
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
@@ -524,10 +543,10 @@ public class card extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(btnexit, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                        .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(btnexit, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(32, 32, 32))
         );
@@ -1002,6 +1021,81 @@ public class card extends javax.swing.JFrame {
        }
         
     }//GEN-LAST:event_txtreminderKeyReleased
+
+    private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Click on print");
+        t1=txtname.getText();
+        t2=txtcode.getText();
+        t3=txtdiesease.getText();
+        t4=txttreatement.getText();
+        t6=Integer.parseInt(lblid.getText());
+        t7=Integer.parseInt(lblbill.getText());
+        t8=Integer.parseInt(txtamount.getText()); 
+        int pay=Integer.parseInt(txtpaid.getText());
+        int t9=Integer.parseInt(txtbalance.getText());
+        
+        System.out.println("t1 : "+ t1);
+        System.out.println("t2 : "+ t2);
+        System.out.println("t3 : "+ t3);
+        System.out.println("t4 : "+ t4);
+        System.out.println("t4 : "+ t5);
+        System.out.println("t6 : "+ t6);
+        System.out.println("t7 : "+ t7);
+        System.out.println("t8 : "+ t8);
+        System.out.println("t9 : "+ t9);
+        System.out.println("pay : "+ pay);
+                
+        try
+        {
+            InputStream is = this.getClass().getClassLoader().getResourceAsStream("clinic/rptSampleJasper.jasper");
+            
+            Map mapParameters=new HashMap();
+            mapParameters.put("title", "Hospital");
+//            mapParameters.put("fromDate", "01-01-2018");
+//            mapParameters.put("toDate", "30-01-2018");
+            
+            
+            
+            
+            
+            List<clsDiseaseBean>listOfDiseaseBeans=new ArrayList<clsDiseaseBean>();
+            
+            clsDiseaseBean obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Code 1");
+            obj.setStrDiseaseName("Disease 1");
+            
+            listOfDiseaseBeans.add(obj);
+            
+            obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Code 2");
+            obj.setStrDiseaseName("Disease 2");
+            
+            listOfDiseaseBeans.add(obj);
+            
+            obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Code 3");
+            obj.setStrDiseaseName("Disease 3");
+            
+            listOfDiseaseBeans.add(obj);
+
+            JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(listOfDiseaseBeans);
+            JasperPrint print = JasperFillManager.fillReport(is, mapParameters, beanCollectionDataSource);
+            List<JRPrintPage> pages = print.getPages();
+
+            JRViewer viewer = new JRViewer(print);
+            JFrame jf = new JFrame();
+            jf.getContentPane().add(viewer);
+            jf.validate();
+            jf.setVisible(true);
+            jf.setSize(new Dimension(850, 750));
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_printActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1015,6 +1109,7 @@ public class card extends javax.swing.JFrame {
     private javax.swing.JButton btnsave;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
