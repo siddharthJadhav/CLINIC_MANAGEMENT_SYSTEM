@@ -34,8 +34,8 @@ public class card extends javax.swing.JFrame {
     Date date=new Date();
      String s1,s2,s5;
      int s3,s4; 
-     String name,allergy,gender,code;
-     int age;
+     String name,allergy,gender,code,diesease,treatement;
+     int age, amount;
    
      tablet t=new tablet();
      boolean tvi=t.isVisible();
@@ -501,10 +501,10 @@ public class card extends javax.swing.JFrame {
                         .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(76, 76, 76)
                         .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(79, 79, 79)
-                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(79, 79, 79)))
                 .addContainerGap())
         );
+//.add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
@@ -546,10 +546,12 @@ public class card extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(btnexit, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(32, 32, 32))
         );
+
+//.add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1025,25 +1027,22 @@ public class card extends javax.swing.JFrame {
     private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
         // TODO add your handling code here:
         System.out.println("Click on print");
-        t1=txtname.getText();
-        t2=txtcode.getText();
-        t3=txtdiesease.getText();
-        t4=txttreatement.getText();
-        t6=Integer.parseInt(lblid.getText());
-        t7=Integer.parseInt(lblbill.getText());
-        t8=Integer.parseInt(txtamount.getText()); 
+        name=txtname.getText();
+//        t2=txtcode.getText();
+        diesease=txtdiesease.getText();
+        treatement=txttreatement.getText();
+//        t6=Integer.parseInt(lblid.getText());
+//        t7=Integer.parseInt(lblbill.getText());
+        amount=Integer.parseInt(txtamount.getText()); 
         int pay=Integer.parseInt(txtpaid.getText());
-        int t9=Integer.parseInt(txtbalance.getText());
+        int balance=Integer.parseInt(txtbalance.getText());
         
-        System.out.println("t1 : "+ t1);
-        System.out.println("t2 : "+ t2);
-        System.out.println("t3 : "+ t3);
-        System.out.println("t4 : "+ t4);
-        System.out.println("t4 : "+ t5);
-        System.out.println("t6 : "+ t6);
-        System.out.println("t7 : "+ t7);
-        System.out.println("t8 : "+ t8);
-        System.out.println("t9 : "+ t9);
+        System.out.println("diesease : "+ diesease);
+//        System.out.println("t2 : "+ t2);
+//        System.out.println("t3 : "+ t3);
+        System.out.println("treatement : "+ treatement);
+        System.out.println("amount : "+ amount);
+        System.out.println("balance : "+ balance);
         System.out.println("pay : "+ pay);
                 
         try
@@ -1062,20 +1061,38 @@ public class card extends javax.swing.JFrame {
             List<clsDiseaseBean>listOfDiseaseBeans=new ArrayList<clsDiseaseBean>();
             
             clsDiseaseBean obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Code 1");
-            obj.setStrDiseaseName("Disease 1");
+            obj.setStrDiseaseCode("Name");
+            obj.setStrDiseaseName(name);
             
             listOfDiseaseBeans.add(obj);
             
             obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Code 2");
-            obj.setStrDiseaseName("Disease 2");
+            obj.setStrDiseaseCode("Diesease");
+            obj.setStrDiseaseName(diesease);
             
             listOfDiseaseBeans.add(obj);
             
             obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Code 3");
-            obj.setStrDiseaseName("Disease 3");
+            obj.setStrDiseaseCode("Treatement");
+            obj.setStrDiseaseName(treatement);
+            
+            listOfDiseaseBeans.add(obj);
+           
+            obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Amount");
+            obj.setStrDiseaseName(Integer.toString(amount));
+            
+            listOfDiseaseBeans.add(obj);
+            
+            obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Paid");
+            obj.setStrDiseaseName(Integer.toString(pay));
+            
+            listOfDiseaseBeans.add(obj);
+            
+            obj=new clsDiseaseBean();
+            obj.setStrDiseaseCode("Balance");
+            obj.setStrDiseaseName(Integer.toString(balance));
             
             listOfDiseaseBeans.add(obj);
 
