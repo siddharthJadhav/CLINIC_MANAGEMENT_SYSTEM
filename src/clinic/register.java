@@ -14,11 +14,17 @@ package clinic;
 //import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.sql.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class register extends javax.swing.JFrame {
     
     /** Creates new form update_record */
-         String t9,t1,t2,t3,t4,t6,t7,t8,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19;
+    private Pattern pattern;
+    private Matcher matcher;
+    private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    
+      String t9,t1,t2,t3,t4,t6,t7,t8,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19;
      int t5=0,s4=0;
    preview p=new preview(t1,t2,t3,t18,t5,t6,t7,t8,t9,t10,t11,t12,t15,t19,t17);
     boolean rvi=p.isVisible();
@@ -54,6 +60,7 @@ public class register extends javax.swing.JFrame {
         txtmail = new javax.swing.JTextField();
         lbleaddress = new javax.swing.JLabel();
         lblecontact = new javax.swing.JLabel();
+        emailValidationError = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblcode = new javax.swing.JLabel();
         lblreference = new javax.swing.JLabel();
@@ -89,23 +96,23 @@ public class register extends javax.swing.JFrame {
         setTitle("Register");
         setResizable(false);
 
-        lblpatient.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblpatient.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblpatient.setText("Name Of Patient");
         lblpatient.setName("lblpatient"); // NOI18N
 
-        lblfname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblfname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblfname.setText("F-Name");
         lblfname.setName("lblfname"); // NOI18N
 
-        lblmname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblmname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblmname.setText("M-Name");
         lblmname.setName("lblmname"); // NOI18N
 
-        lbllname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbllname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbllname.setText("L-Name");
         lbllname.setName("lbllname"); // NOI18N
 
-        txtfname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtfname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtfname.setName("txtfname"); // NOI18N
         txtfname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -118,7 +125,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        txtmname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtmname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtmname.setName("txtmname"); // NOI18N
         txtmname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -131,7 +138,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        txtlname.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtlname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtlname.setName("txtlname"); // NOI18N
         txtlname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -156,7 +163,6 @@ public class register extends javax.swing.JFrame {
             .add(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(lblpatient)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(22, 22, 22)
@@ -173,7 +179,7 @@ public class register extends javax.swing.JFrame {
                         .add(123, 123, 123)
                         .add(lbllname)))
                 .add(18, 18, 18)
-                .add(lblename, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                .add(lblename, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -194,27 +200,27 @@ public class register extends javax.swing.JFrame {
                 .add(150, 150, 150))
         );
 
-        lbladdress.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbladdress.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbladdress.setText("Address");
         lbladdress.setName("lbladdress"); // NOI18N
 
-        lblcontact.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblcontact.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblcontact.setText("Contact No.");
         lblcontact.setName("lblcontact"); // NOI18N
 
-        lblmail.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblmail.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblmail.setText("E-Mail");
         lblmail.setName("lblmail"); // NOI18N
 
         txtaddress.setColumns(20);
-        txtaddress.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtaddress.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtaddress.setLineWrap(true);
         txtaddress.setRows(5);
         txtaddress.setTabSize(1);
         txtaddress.setName("txtaddress"); // NOI18N
         jScrollPane1.setViewportView(txtaddress);
 
-        txtcontact.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtcontact.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtcontact.setName("txtcontact"); // NOI18N
         txtcontact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,12 +238,16 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        txtmail.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtmail.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtmail.setName("txtmail"); // NOI18N
 
         lbleaddress.setForeground(new java.awt.Color(204, 51, 0));
 
         lblecontact.setForeground(new java.awt.Color(204, 51, 0));
+
+        emailValidationError.setForeground(new java.awt.Color(204, 51, 0));
+        emailValidationError.setText("");
+        emailValidationError.setRequestFocusEnabled(false);
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -248,7 +258,7 @@ public class register extends javax.swing.JFrame {
                 .add(lbladdress)
                 .add(74, 74, 74)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, lbleaddress, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, lbleaddress, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -259,9 +269,20 @@ public class register extends javax.swing.JFrame {
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(txtcontact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(lblecontact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 169, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(txtmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .add(lblecontact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 169, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(147, Short.MAX_VALUE))
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(txtmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(emailValidationError, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 169, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel3Layout.createSequentialGroup()
+                                .add(10, 10, 10)
+                                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jPanel3Layout.createSequentialGroup()
+                                        .add(10, 10, 10)))))
+                        .add(18, 18, 18))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -279,29 +300,37 @@ public class register extends javax.swing.JFrame {
                                 .add(txtcontact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(lblcontact))
                             .add(lblecontact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 29, Short.MAX_VALUE)
-                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(txtmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblmail))
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel3Layout.createSequentialGroup()
+                                .add(0, 0, Short.MAX_VALUE)
+                                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)))
+                            .add(jPanel3Layout.createSequentialGroup()
+                                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(txtmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblmail))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(emailValidationError, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(5, 5, 5))))
         );
+        // emailValidationError.getAccessibleContext().setAccessibleName("emailValidationError");
 
-        lblcode.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblcode.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblcode.setText("Code");
         lblcode.setName("lblcode"); // NOI18N
 
-        lblreference.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblreference.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblreference.setText("Reference");
         lblreference.setName("lblreference"); // NOI18N
 
-        lblrelation.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblrelation.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblrelation.setText("Relation");
         lblrelation.setName("lblrelation"); // NOI18N
 
-        btnfind.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnfind.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnfind.setText("Find");
         btnfind.setBorder(null);
         btnfind.setName("btnfind"); // NOI18N
@@ -319,7 +348,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        cborelation.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cborelation.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cborelation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELF", "FATHER", "MOTHER", "GRAND-PARENT", "BROTHER", "SISTER", "HUSBAND", "WIFE", "UNCLE", "AUNTY", "FRIEND" }));
         cborelation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cborelation.setName("cborelation"); // NOI18N
@@ -349,7 +378,7 @@ public class register extends javax.swing.JFrame {
                 .add(cborelation, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 98, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(btnfind, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -366,7 +395,7 @@ public class register extends javax.swing.JFrame {
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnexit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnexit.setText("Back");
         btnexit.setName("btnexit"); // NOI18N
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -375,11 +404,11 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setText("REGISTER");
 
-        btnsubmit.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnsubmit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnsubmit.setText("Submit");
         btnsubmit.setName("btnsubmit"); // NOI18N
         btnsubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -393,7 +422,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        btnclear.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnclear.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setName("btnclear"); // NOI18N
         btnclear.addActionListener(new java.awt.event.ActionListener() {
@@ -402,23 +431,23 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        lblbirth.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblbirth.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblbirth.setText("Date Of Birth");
         lblbirth.setName("lblbirth"); // NOI18N
 
-        lblgender.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblgender.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblgender.setText("Gender");
         lblgender.setName("lblgender"); // NOI18N
 
-        lblage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblage.setText("Age");
         lblage.setName("lblage"); // NOI18N
 
-        lbloccupation.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbloccupation.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbloccupation.setText("Occupation");
         lbloccupation.setName("lbloccupation"); // NOI18N
 
-        txtoccupation.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtoccupation.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtoccupation.setName("txtoccupation"); // NOI18N
         txtoccupation.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -426,7 +455,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtage.setName("txtage"); // NOI18N
         txtage.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -434,7 +463,7 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        cboyear.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboyear.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cboyear.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cboyear.setName("cboyear"); // NOI18N
@@ -444,30 +473,30 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        cbomonth.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cbomonth.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbomonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }));
         cbomonth.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cbomonth.setName("cbomonth"); // NOI18N
 
-        cboday.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboday.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboday.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         cboday.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cboday.setName("cboday"); // NOI18N
 
-        cbogender.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cbogender.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbogender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Male", "Female" }));
         cbogender.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cbogender.setName("cbogender"); // NOI18N
 
-        lblyear.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblyear.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblyear.setText("Year");
         lblyear.setName("lblyear"); // NOI18N
 
-        lblmonth.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblmonth.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblmonth.setText("Month");
         lblmonth.setName("lblmonth"); // NOI18N
 
-        lblday.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblday.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblday.setText("Day");
         lblday.setName("lblday"); // NOI18N
 
@@ -515,7 +544,7 @@ public class register extends javax.swing.JFrame {
                                 .add(txtage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(18, 18, 18)
                                 .add(lbleage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 197, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(237, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -553,11 +582,11 @@ public class register extends javax.swing.JFrame {
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lblallergy.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblallergy.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblallergy.setText("Allergy");
         lblallergy.setName("lblallergy"); // NOI18N
 
-        txtallergy.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtallergy.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtallergy.setName("txtallergy"); // NOI18N
         txtallergy.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -574,7 +603,7 @@ public class register extends javax.swing.JFrame {
                 .add(lblallergy)
                 .add(78, 78, 78)
                 .add(txtallergy, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 520, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -594,32 +623,30 @@ public class register extends javax.swing.JFrame {
                 .add(274, 274, 274)
                 .add(jLabel1))
             .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .add(layout.createSequentialGroup()
-                .add(165, 165, 165)
-                .add(btnsubmit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(29, 29, 29)
-                .add(btnclear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(30, 30, 30)
-                .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .add(165, 165, 165)
+                        .add(btnsubmit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(29, 29, 29)
+                        .add(btnclear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(30, 30, 30)
+                        .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 471, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -633,7 +660,7 @@ public class register extends javax.swing.JFrame {
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(24, 24, 24)
                 .add(jPanel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -912,14 +939,18 @@ public class register extends javax.swing.JFrame {
         t15=txtreference.getText();
         t18=t4+"-"+t16+"-"+t17;
         t19=(String)cborelation.getSelectedItem();
-        String z=txtage.getText();    
-       if(!(t1.equals("")||t3.equals("")||t8.equals("")||z.equals("")))
+        String z=txtage.getText();  
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        boolean validEmail = validate(t10.trim());
+        System.out.println("Valid Email : "+validEmail);
+        
+       if(!(t1.equals("")||t3.equals("")||t8.equals("")||z.equals("")|| !validEmail))
        {      
           t5=Integer.parseInt(z);    
           lblename.setText("");
           lbleage.setText("");
           lbleaddress.setText("");
-          
+          emailValidationError.setText("");
           if(rvi==false)
            { 
             p=new preview(t1,t2,t3,t18,t5,t6,t7,t8,t9,t10,t11,t12,t15,t19,t17);  
@@ -942,19 +973,20 @@ public class register extends javax.swing.JFrame {
             }    
           }
        }
-         else if(t1.equals("")&&t3.equals("")&&t8.equals("")&&z.equals(""))
+         else if(t1.equals("")&&t3.equals("")&&t8.equals("")&&z.equals("")&& !validEmail)
           {
               lblename.setText("Name Is Required");
               lbleage.setText("Enter Age");
               lbleaddress.setText("Enter Address"); 
-          
+              emailValidationError.setText("Enter Valid Email");
           }
          else if(t1.equals("")||t3.equals(""))
           {
              
             lblename.setText("Name Is Required");
             lbleage.setText("");
-            lbleaddress.setText(""); 
+            lbleaddress.setText("");
+            emailValidationError.setText(""); 
           }
          else if(z.equals(""))
           {
@@ -967,6 +999,14 @@ public class register extends javax.swing.JFrame {
            lbleaddress.setText("Enter Address"); 
              lblename.setText("");
               lbleage.setText("");
+              emailValidationError.setText("");
+         }  
+            else if(!validEmail)
+         {
+           lbleaddress.setText(""); 
+             lblename.setText("");
+              lbleage.setText("");
+              emailValidationError.setText("Enter Valid Email");
          }  
        
          
@@ -1076,9 +1116,13 @@ public class register extends javax.swing.JFrame {
          register r=new register();
          r.setVisible(true);
     }
-    /**
-     * @param args the command line arguments
-     */
+        
+    public boolean validate(final String hex) {
+
+        matcher = pattern.matcher(hex);
+        return matcher.matches();
+
+    }
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1092,6 +1136,7 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JComboBox cborelation;
     public javax.swing.JComboBox cboyear;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel emailValidationError;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
