@@ -112,8 +112,6 @@ public class card extends javax.swing.JFrame {
         btnhistory = new javax.swing.JButton();
         btnsave = new javax.swing.JButton();
         lbleamount = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtreminder = new javax.swing.JTextField();
         lblreminder = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -430,15 +428,6 @@ public class card extends javax.swing.JFrame {
 
         lbleamount.setForeground(new java.awt.Color(204, 0, 0));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel4.setText("Reminder");
-
-        txtreminder.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtreminderKeyReleased(evt);
-            }
-        });
-
         lblreminder.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         lblreminder.setForeground(new java.awt.Color(255, 51, 102));
 
@@ -469,13 +458,8 @@ public class card extends javax.swing.JFrame {
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(layout.createSequentialGroup()
                                 .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel4)
-                                    .add(layout.createSequentialGroup()
-                                        .add(txtreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(10, 10, 10)
-                                        .add(lblreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                                .add(125, 125, 125)
+                                .add(lblreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(lblbill)))
                     .add(layout.createSequentialGroup()
@@ -501,10 +485,10 @@ public class card extends javax.swing.JFrame {
                         .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(76, 76, 76)
                         .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(79, 79, 79)))
+                        .add(79, 79, 79)
+                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-//.add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
@@ -523,11 +507,7 @@ public class card extends javax.swing.JFrame {
                         .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, lblreminder, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, txtreminder, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                        .add(lblreminder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(28, 28, 28)))
                 .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(12, 12, 12)
@@ -546,12 +526,10 @@ public class card extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(btnexit, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(32, 32, 32))
         );
-
-//.add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -719,7 +697,7 @@ public class card extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 // TODO
-        txtreminder.setText("0");
+//        txtreminder.setText("0");
         lbltreatement.setText("");
         lbldiesease.setText("");
         lbleamount.setText("");
@@ -858,7 +836,7 @@ public class card extends javax.swing.JFrame {
         if(!(t3.equals("")||t4.equals("")||t8==0))
            { 
                     
-               remin=Integer.parseInt(txtreminder.getText());
+//               remin=Integer.parseInt(txtreminder.getText());
                
                  amount=Integer.parseInt(txtamount.getText());
        paid=Integer.parseInt(txtpaid.getText());
@@ -1001,29 +979,6 @@ public class card extends javax.swing.JFrame {
 		lbleamount.setText("");
 	}//GEN-LAST:event_txtamountFocusGained
 
-    private void txtreminderKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtreminderKeyReleased
-        // TODO add your handling code here:
-        
-        String s=txtreminder.getText();
-        if(!s.equals(""))
-        {
-         int a=s.length()-1;
-         int i=(int)s.charAt(a);
-         if(!(i>47&&i<58))
-         {
-            lblreminder.setText("Enter only number");
-            
-            txtreminder.setText("");
-         }
-         else
-        {
-         lblreminder.setText("");
-      
-         }
-       }
-        
-    }//GEN-LAST:event_txtreminderKeyReleased
-
     private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
         // TODO add your handling code here:
         System.out.println("Click on print");
@@ -1130,7 +1085,6 @@ public class card extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1160,7 +1114,6 @@ public class card extends javax.swing.JFrame {
     private javax.swing.JTextField txtgender;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtpaid;
-    private javax.swing.JTextField txtreminder;
     private javax.swing.JTextArea txttreatement;
     // End of variables declaration//GEN-END:variables
     
