@@ -61,7 +61,6 @@ public class report extends javax.swing.JFrame {
         optaddress = new javax.swing.JRadioButton();
         optfamily = new javax.swing.JRadioButton();
         opttablet = new javax.swing.JRadioButton();
-        optreminder = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -74,7 +73,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        btnclear.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnclear.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setName("btnclear"); // NOI18N
         btnclear.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +82,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        btnback.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnback.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnback.setText("Back");
         btnback.setName("btnback"); // NOI18N
         btnback.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +91,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        btnsearch.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnsearch.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnsearch.setText("Show");
         btnsearch.setName("btnsearch"); // NOI18N
         btnsearch.addActionListener(new java.awt.event.ActionListener() {
@@ -103,56 +102,56 @@ public class report extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbldate1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldate1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldate1.setText("Date  From");
         lbldate1.setName("lbldate1"); // NOI18N
 
-        lbldate2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldate2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldate2.setText("Date  To");
         lbldate2.setName("lbldate2"); // NOI18N
 
-        cboday1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboday1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboday1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         cboday1.setName("cboday1"); // NOI18N
 
-        cbomonth1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cbomonth1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbomonth1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }));
         cbomonth1.setName("cbomonth1"); // NOI18N
 
-        cboyear1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboyear1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboyear1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cboyear1.setName("cboyear1"); // NOI18N
 
-        cboday2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboday2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboday2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         cboday2.setName("cboday2"); // NOI18N
 
-        cbomonth2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cbomonth2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbomonth2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }));
         cbomonth2.setName("cbomonth2"); // NOI18N
 
-        cboyear2.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboyear2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboyear2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cboyear2.setName("cboyear3"); // NOI18N
 
-        lbldiesease.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lbldiesease.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lbldiesease.setText("Disease");
         lbldiesease.setName("lbldiesease"); // NOI18N
 
         txtdiesease.setName("txtdiesease"); // NOI18N
 
-        lblage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblage.setText("Age");
         lblage.setName("lblage"); // NOI18N
 
-        cboage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cboage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cboage.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Equal To", "Less Than", "Greater Than", "Between" }));
         cboage.setName("cboage"); // NOI18N
 
-        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtage.setName("txtage"); // NOI18N
 
-        txtage1.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        txtage1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtage1.setName("txtage1"); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
@@ -185,14 +184,13 @@ public class report extends javax.swing.JFrame {
                         .add(21, 21, 21)
                         .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(cboage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 102, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(txtage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(txtage1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(txtdiesease, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 205, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -222,7 +220,7 @@ public class report extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        optdiesease.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optdiesease.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optdiesease.setText("Disease");
         optdiesease.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optdiesease.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -233,7 +231,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        optallergy.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optallergy.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optallergy.setText("Allergy");
         optallergy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optallergy.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -244,7 +242,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        optage.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optage.setText("Age");
         optage.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optage.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -255,7 +253,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        optdaily.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optdaily.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optdaily.setText("Daily Patient");
         optdaily.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optdaily.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -266,7 +264,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        optaddress.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optaddress.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optaddress.setText("Address");
         optaddress.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optaddress.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -277,7 +275,7 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        optfamily.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        optfamily.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         optfamily.setText("Family");
         optfamily.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         optfamily.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -288,21 +286,13 @@ public class report extends javax.swing.JFrame {
             }
         });
 
-        opttablet.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        opttablet.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         opttablet.setText("Tablet");
         opttablet.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         opttablet.setMargin(new java.awt.Insets(0, 0, 0, 0));
         opttablet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opttabletActionPerformed(evt);
-            }
-        });
-
-        optreminder.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        optreminder.setText("Reminder");
-        optreminder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optreminderActionPerformed(evt);
             }
         });
 
@@ -325,14 +315,12 @@ public class report extends javax.swing.JFrame {
                 .add(optfamily)
                 .add(18, 18, 18)
                 .add(opttablet, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(optreminder)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(optdiesease)
                     .add(optallergy)
@@ -340,14 +328,13 @@ public class report extends javax.swing.JFrame {
                     .add(optdaily)
                     .add(optaddress)
                     .add(optfamily)
-                    .add(opttablet, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(optreminder))
+                    .add(opttablet, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setFont(new java.awt.Font("Algerian", 1, 36));
+        jLabel1.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 0));
         jLabel1.setText("PRINT  REPORT");
 
@@ -356,7 +343,7 @@ public class report extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jLabel1)
                 .add(175, 175, 175))
         );
@@ -386,9 +373,8 @@ public class report extends javax.swing.JFrame {
                         .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .add(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -412,7 +398,9 @@ public class report extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .add(jPanel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -436,7 +424,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(true);
-   optreminder.setSelected(false);
+//   optreminder.setSelected(false);
         
         lblage.setVisible(false);
         cboage.setVisible(false);
@@ -776,7 +764,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-       optreminder.setSelected(false);
+//       optreminder.setSelected(false);
         
         lblage.setVisible(false);
         cboage.setVisible(false);
@@ -811,7 +799,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(true);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-           optreminder.setSelected(false);
+//           optreminder.setSelected(false);
         lblage.setVisible(false);
         cboage.setVisible(false);
         txtage.setVisible(false);
@@ -845,7 +833,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-   optreminder.setSelected(false);
+//   optreminder.setSelected(false);
         
         lblage.setVisible(false);
         cboage.setVisible(false);
@@ -880,7 +868,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(true);
         opttablet.setSelected(false);
-       optreminder.setSelected(false);
+//       optreminder.setSelected(false);
         
         lblage.setVisible(false);
         cboage.setVisible(false);
@@ -914,7 +902,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-   optreminder.setSelected(false);
+//   optreminder.setSelected(false);
         
         lblage.setVisible(true);
         cboage.setVisible(true);
@@ -949,7 +937,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-          optreminder.setSelected(false);
+//          optreminder.setSelected(false);
         
         lblage.setVisible(false);
         cboage.setVisible(false);
@@ -984,7 +972,7 @@ public class report extends javax.swing.JFrame {
         optfamily.setSelected(false);
         optdaily.setSelected(false);
         opttablet.setSelected(false);
-         optreminder.setSelected(false);
+//         optreminder.setSelected(false);
 
         
         lblage.setVisible(false);
@@ -1004,23 +992,6 @@ public class report extends javax.swing.JFrame {
         t.setVisible(false);
         p.setVisible(false); 
     }//GEN-LAST:event_optdieseaseActionPerformed
-
-    private void optreminderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optreminderActionPerformed
-        // TODO add your handling code here:
-      optreminder.setSelected(true);
-         optage.setSelected(false);
-        optallergy.setSelected(false);
-        optdiesease.setSelected(false);
-        optaddress.setSelected(false);
-        optfamily.setSelected(false);
-        optdaily.setSelected(false);
-        opttablet.setSelected(false);
-        reminder r= new reminder();
-        r.setVisible(true);
-           da.setVisible(false);
-        t.setVisible(false);
-        p.setVisible(false); 
-}//GEN-LAST:event_optreminderActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1059,7 +1030,6 @@ public class report extends javax.swing.JFrame {
     private javax.swing.JRadioButton optdaily;
     private javax.swing.JRadioButton optdiesease;
     private javax.swing.JRadioButton optfamily;
-    private javax.swing.JRadioButton optreminder;
     private javax.swing.JRadioButton opttablet;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtage1;
