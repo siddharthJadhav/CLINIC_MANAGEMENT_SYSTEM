@@ -479,7 +479,7 @@ public class register extends javax.swing.JFrame {
         cbomonth.setName("cbomonth"); // NOI18N
 
         cboday.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        cboday.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cboday.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         cboday.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         cboday.setName("cboday"); // NOI18N
 
