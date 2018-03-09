@@ -73,14 +73,12 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       <Component id="btnsave" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                       <Component id="btnhistory" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                       <Component id="btnexit" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -129,7 +127,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnexit" alignment="3" pref="31" max="32767" attributes="1"/>
                   <Component id="btnhistory" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="btnsave" alignment="3" min="-2" pref="30" max="-2" attributes="1"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -661,14 +658,6 @@
           <Color blue="66" green="33" red="ff" type="rgb"/>
         </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Print"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="printActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

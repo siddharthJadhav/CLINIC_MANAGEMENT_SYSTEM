@@ -113,7 +113,6 @@ public class card extends javax.swing.JFrame {
         btnsave = new javax.swing.JButton();
         lbleamount = new javax.swing.JLabel();
         lblreminder = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Card");
@@ -432,13 +431,6 @@ public class card extends javax.swing.JFrame {
         lblreminder.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         lblreminder.setForeground(new java.awt.Color(255, 51, 102));
 
-        jButton3.setText("Print");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                printActionPerformed(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -480,14 +472,12 @@ public class card extends javax.swing.JFrame {
                                 .add(txtbalance, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(lbleamount, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(layout.createSequentialGroup()
-                        .add(78, 78, 78)
+                        .add(106, 106, 106)
                         .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(75, 75, 75)
+                        .add(119, 119, 119)
                         .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(76, 76, 76)
-                        .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(79, 79, 79)
-                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(135, 135, 135)
+                        .add(btnexit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -527,7 +517,6 @@ public class card extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(btnexit, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .add(btnhistory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnsave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(32, 32, 32))
         );
@@ -979,96 +968,6 @@ public class card extends javax.swing.JFrame {
     private void txtamountFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtamountFocusGained
 		lbleamount.setText("");
 	}//GEN-LAST:event_txtamountFocusGained
-
-    private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Click on print");
-        name=txtname.getText();
-//        t2=txtcode.getText();
-        diesease=txtdiesease.getText();
-        treatement=txttreatement.getText();
-//        t6=Integer.parseInt(lblid.getText());
-//        t7=Integer.parseInt(lblbill.getText());
-        amount=Integer.parseInt(txtamount.getText()); 
-        int pay=Integer.parseInt(txtpaid.getText());
-        int balance=Integer.parseInt(txtbalance.getText());
-        
-        System.out.println("diesease : "+ diesease);
-//        System.out.println("t2 : "+ t2);
-//        System.out.println("t3 : "+ t3);
-        System.out.println("treatement : "+ treatement);
-        System.out.println("amount : "+ amount);
-        System.out.println("balance : "+ balance);
-        System.out.println("pay : "+ pay);
-                
-        try
-        {
-            InputStream is = this.getClass().getClassLoader().getResourceAsStream("clinic/rptSampleJasper.jasper");
-            
-            Map mapParameters=new HashMap();
-            mapParameters.put("title", "Hospital");
-//            mapParameters.put("fromDate", "01-01-2018");
-//            mapParameters.put("toDate", "30-01-2018");
-            
-            
-            
-            
-            
-            List<clsDiseaseBean>listOfDiseaseBeans=new ArrayList<clsDiseaseBean>();
-            
-            clsDiseaseBean obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Name");
-            obj.setStrDiseaseName(name);
-            
-            listOfDiseaseBeans.add(obj);
-            
-            obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Diesease");
-            obj.setStrDiseaseName(diesease);
-            
-            listOfDiseaseBeans.add(obj);
-            
-            obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Treatement");
-            obj.setStrDiseaseName(treatement);
-            
-            listOfDiseaseBeans.add(obj);
-           
-            obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Amount");
-            obj.setStrDiseaseName(Integer.toString(amount));
-            
-            listOfDiseaseBeans.add(obj);
-            
-            obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Paid");
-            obj.setStrDiseaseName(Integer.toString(pay));
-            
-            listOfDiseaseBeans.add(obj);
-            
-            obj=new clsDiseaseBean();
-            obj.setStrDiseaseCode("Balance");
-            obj.setStrDiseaseName(Integer.toString(balance));
-            
-            listOfDiseaseBeans.add(obj);
-
-            JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(listOfDiseaseBeans);
-            JasperPrint print = JasperFillManager.fillReport(is, mapParameters, beanCollectionDataSource);
-            List<JRPrintPage> pages = print.getPages();
-
-            JRViewer viewer = new JRViewer(print);
-            JFrame jf = new JFrame();
-            jf.getContentPane().add(viewer);
-            jf.validate();
-            jf.setVisible(true);
-            jf.setSize(new Dimension(850, 750));
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_printActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1082,7 +981,6 @@ public class card extends javax.swing.JFrame {
     private javax.swing.JButton btnsave;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
